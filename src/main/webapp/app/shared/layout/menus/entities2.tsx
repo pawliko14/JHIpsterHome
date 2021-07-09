@@ -3,10 +3,10 @@ import MenuItem from 'app/shared/layout/menus/menu-item';
 
 import { NavDropdown } from './menu-components';
 
-export const EntitiesMenu = props => (
-  <NavDropdown icon="th-list" name="Entities" id="entity-menu" data-cy="entity" style={{ maxHeight: '80vh', overflow: 'auto' }}>
+export const EntitiesMenu2 = props => (
+  <NavDropdown icon="th-list" name="Entities2" id="entity-menu" data-cy="entity" style={{ maxHeight: '80vh', overflow: 'auto' }}>
     <>{/* to avoid warnings when empty */}</>
-    <MenuItem icon="asterisk" to="/car">
+    <MenuItem icon="binoculars" to="/car">
       Car
     </MenuItem>
     <MenuItem icon="asterisk" to="/document">

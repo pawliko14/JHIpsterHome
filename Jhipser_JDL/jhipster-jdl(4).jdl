@@ -1,0 +1,40 @@
+
+entity User {
+ imie String required
+ nazwisko String required
+ dzial String required
+}
+
+entity Wydzial {
+ numWydzial String required  // Pr1 Pr2 ...
+ satus Boolean required // status czy wydzial jest zmakniety / otwarty
+}
+
+entity Maszyna {
+ nazwaMaszyny String required
+ status StatusMaszyny  // ENUM
+ 
+}
+
+enum StatusMaszyny {
+ SPRAWNA,
+ WYLACZONA,
+ DAWCA
+}
+
+entity Notatka {
+ tytul String required 
+ usterka String required
+ naprawa String required
+ dataNaprawy LocalDate required
+ dataZgloszenia LocalDate required
+ pic1 Blob
+ pic2 Blob
+}
+
+
+relationship OneToMany {
+ Maszyna{notatka} to Notatka{maszyna(id) required}
+ Wydzial{maszyna} to Maszyna{Wydzial(id) required}
+ User{notatka} to Notatka{User(id) required}
+}
